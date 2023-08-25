@@ -34,11 +34,15 @@ const SearchPage = () => {
   useEffect(() => {
     const checkAccessToken = async () => {
       try {
-        await axiosBE.post("/api/auth/checkAcessToken");
+        await axiosBE.post(
+          `${process.env.REACT_APP_SERVER_BASE_URL}/api/auth/checkAcessToken`
+        );
       } catch (error: any) {
         if (error.response.status === 401 || error.response.status === 404) {
           try {
-            const resRefresh = await axiosBE.post("/api/auth/refreshToken");
+            const resRefresh = await axiosBE.post(
+              `${process.env.REACT_APP_SERVER_BASE_URL}/api/auth/refreshToken`
+            );
             if (resRefresh.status === 201) {
               console.log(resRefresh.data.success);
               dispatch(userActions.refreshAccessTk(resRefresh.data));

@@ -11,11 +11,15 @@ const MainPage = () => {
   useEffect(() => {
     const checkAccessToken = async () => {
       try {
-        await axios.post("/api/auth/checkAcessToken");
+        await axios.post(
+          `${process.env.REACT_APP_SERVER_BASE_URL}/api/auth/checkAcessToken`
+        );
       } catch (error: any) {
         if (error.response.status === 401 || error.response.status === 404) {
           try {
-            const resRefresh = await axios.post("/api/auth/refreshToken");
+            const resRefresh = await axios.post(
+              `${process.env.REACT_APP_SERVER_BASE_URL}/api/auth/refreshToken`
+            );
             if (resRefresh.status === 201) {
               console.log(resRefresh.data.success);
               dispatch(userActions.refreshAccessTk(resRefresh.data));

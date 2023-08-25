@@ -23,11 +23,14 @@ const SignUpPage = () => {
   const onSubmitHandler = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/auth/signup", {
-        email,
-        password,
-        username,
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_SERVER_BASE_URL}/api/auth/signup`,
+        {
+          email,
+          password,
+          username,
+        }
+      );
       console.log("sign up response:", response);
       if (response.status === 200) {
         setErrors({});

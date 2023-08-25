@@ -14,7 +14,10 @@ const LoginMainPage = () => {
   const clickHandler = async () => {
     try {
       if (email !== "") {
-        const response = await axios.post("/api/auth/findUser", { email });
+        const response = await axios.post(
+          `${process.env.REACT_APP_SERVER_BASE_URL}/api/auth/findUser`,
+          { email }
+        );
         if (response.data.success) {
           navigate("/login", { state: { params: email } });
         } else {

@@ -7,7 +7,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
 const app = express();
-const origin = "http://localhost:3000";
+const origin = process.env.APP_URL;
 app.use(cors({ origin, credentials: true }));
 
 app.use(express.json()); // JSON 형태의 요청 body를 파싱하기 위해 express.json() 미들웨어를 사용
@@ -25,7 +25,7 @@ app.get("/", (_, res) => {
 app.use("/api/auth", authRoutes);
 
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running at ${process.env.APP_URL}`);
 
   AppDataSource.initialize()
     .then(async () => {
