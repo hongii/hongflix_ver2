@@ -51,7 +51,7 @@ export const Button = styled.button`
   font-size: calc(0.6rem + 0.6vw);
   font-weight: bold;
   border-radius: 5px;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
   margin-right: 0.8rem;
   text-align: center;
   white-space: nowrap;
@@ -93,13 +93,13 @@ export const Description = styled.div`
   width: 100%;
   white-space: normal;
   display: -webkit-box;
-  -webkit-line-clamp: 5; /* 텍스트를 자를때 원하는 단위 => 5줄, 이 이상의 길이는 ...으로 표시된다. */
+  -webkit-line-clamp: 6; /* 텍스트를 자를때 원하는 단위 => 5줄, 이 이상의 길이는 ...으로 표시된다. */
   -webkit-box-orient: vertical; /* content를 가로 또는 세로로 배치할지 여부를 결정하는 속성 */
   overflow: hidden;
 
-  @media (min-width: 1200px) {
+  /* @media (min-width: 1200px) {
     -webkit-line-clamp: 6;
-  }
+  } */
 `;
 
 export const FadeButton = styled.div`
@@ -167,8 +167,12 @@ export const NoVideo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(2rem + 0.5vw);
   width: 100%;
   height: 100%;
+  padding: 20px;
+`;
+
+export const Text = styled.p`
   color: #666;
+  font-size: calc(1.1rem + 0.5vw);
 `;

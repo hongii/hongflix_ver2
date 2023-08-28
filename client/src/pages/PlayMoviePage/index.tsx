@@ -71,8 +71,16 @@ const PlayMoviePage = () => {
         </S.BackBtn>
         {movie?.videos?.results.length === 0 ? (
           <S.NoVideo>
-            <TbAlertCircle style={{ color: "#666", paddingRight: "10px" }} />{" "}
-            재생 가능한 영상이 없습니다.
+            {/* <TbAlertCircle style={{ color: "#666", paddingRight: "10px" }} /> */}
+            <S.Text>
+              <TbAlertCircle
+                style={{
+                  color: "#666",
+                  paddingRight: "10px",
+                }}
+              />
+              재생 가능한 영상이 없습니다.
+            </S.Text>
           </S.NoVideo>
         ) : (
           <Youtube
