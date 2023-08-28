@@ -118,8 +118,8 @@ export const Button = styled.button`
   border: none;
   font-size: calc(0.55rem + 0.55vw);
   font-weight: bold;
-  border-radius: 8px;
-  padding: 0.6rem 1.5rem;
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
   margin-right: 0.8rem;
   margin-bottom: 10px;
   text-align: center;

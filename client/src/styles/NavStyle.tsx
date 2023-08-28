@@ -42,20 +42,24 @@ export const SearchForm = styled.div<Props>`
   position: relative;
   margin-right: 0.5vw;
   max-width: 200px;
+  z-index: ${(props) => (props.isClickSearch ? "3000" : "1000")};
 
-  @media (max-width: 430px) {
+  @media (width < 375px) {
+    display: none;
+  }
+
+  @media (375px <= width < 430px) {
     position: fixed;
     top: 16px;
     right: 37%;
     width: 200px;
-    z-index: ${(props) => (props.isClickSearch ? "3000" : "2000")};
   }
-  @media (min-width: 430px) and (max-width: 515px) {
+
+  @media (430px <= width < 515px) {
     position: fixed;
     top: 16px;
     right: 34%;
     width: 200px;
-    z-index: ${(props) => (props.isClickSearch ? "3000" : "2000")};
   }
 `;
 
@@ -100,7 +104,7 @@ export const LogoutBtn = styled.button`
   background-color: rgb(229, 9, 20);
   color: #ececec;
   border-radius: 5px;
-  font-size: calc(0.6rem + 0.6vw);
+  font-size: calc(0.55rem + 0.6vw);
   cursor: pointer;
   white-space: nowrap;
 `;

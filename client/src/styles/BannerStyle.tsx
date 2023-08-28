@@ -27,6 +27,10 @@ export const Content = styled.div`
   flex-direction: column;
   padding-top: 140px;
   width: 40%;
+
+  @media (width < 550px) {
+    width: 50%;
+  }
 `;
 
 export const Title = styled.h1`
@@ -44,10 +48,10 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   border: none;
-  font-size: calc(0.7rem + 0.6vw);
+  font-size: calc(0.6rem + 0.6vw);
   font-weight: bold;
-  border-radius: 8px;
-  padding: 0.6rem 1.5rem;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
   margin-right: 0.8rem;
   text-align: center;
   white-space: nowrap;

@@ -76,7 +76,7 @@ const Nav = () => {
       />
 
       <S.NavSecondary>
-        <S.SearchForm ref={ref}>
+        <S.SearchForm ref={ref} isClickSearch={isClickSearch}>
           <S.SearchFormIcon
             isClickSearch={isClickSearch}
             onClick={clickHandler}
