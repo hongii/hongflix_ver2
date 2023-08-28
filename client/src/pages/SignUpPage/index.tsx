@@ -31,7 +31,7 @@ const SignUpPage = () => {
           username,
         }
       );
-      console.log("sign up response:", response);
+      // console.log("sign up response:", response);
       if (response.status === 200) {
         setErrors({});
         window.alert("회원가입이 완료되었습니다.");

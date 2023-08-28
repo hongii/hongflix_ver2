@@ -27,7 +27,7 @@ const Banner = () => {
         params: { append_to_response: "videos" },
       });
       setMovie(movieDetail);
-      console.log("[banner] fetch result(movie detail): ", movieDetail);
+      // console.log("[banner] fetch result(movie detail): ", movieDetail);
     } catch (error) {
       console.log(error);
     }

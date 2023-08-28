@@ -4,8 +4,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import InputGroup from "../../components/InputGroup";
 import axios from "../../api/axiosBackend";
 
-import { useDispatch, useSelector } from "react-redux";
-import { RootState, userActions, userAuthActions } from "../../store/index";
+import { useDispatch } from "react-redux";
+import { userActions, userAuthActions } from "../../store/index";
 
 const LoginInputPage = () => {
   const [email, setEmail] = useState("");
@@ -15,7 +15,6 @@ const LoginInputPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
-  const user = useSelector((state: RootState) => state.user);
 
   useEffect(() => {
     if (location.state) {
@@ -34,12 +33,12 @@ const LoginInputPage = () => {
           password,
         }
       );
-      console.log("login response:", response);
+      // console.log("login response:", response);
 
       if (response.status === 200) {
         dispatch(userActions.login(response.data));
         dispatch(userAuthActions.login());
-        console.log(user);
+        // console.log(user);
         navigate("/");
       }
     } catch (error: any) {
