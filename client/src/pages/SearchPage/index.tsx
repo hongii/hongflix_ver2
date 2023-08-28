@@ -38,7 +38,7 @@ const SearchPage = () => {
           `${process.env.REACT_APP_SERVER_BASE_URL}/api/auth/checkAcessToken`
         );
       } catch (error: any) {
-        if (error.response.status === 401 || error.response.status === 404) {
+        if (error.response.status === 401) {
           try {
             const resRefresh = await axiosBE.post(
               `${process.env.REACT_APP_SERVER_BASE_URL}/api/auth/refreshToken`
