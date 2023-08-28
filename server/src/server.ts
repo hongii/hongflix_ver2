@@ -18,9 +18,9 @@ dotenv.config();
 
 const port = 4000; // 백엔드 포트
 
-app.get("/", (_, res) => {
-  res.send("Running");
-});
+// app.get("/", (_, res) => {
+//   res.send("Running");
+// });
 
 app.use("/api/auth", authRoutes);
 

@@ -37,17 +37,32 @@ export const NavSecondary = styled.div`
   align-items: center;
 `;
 
-export const SearchForm = styled.div`
+export const SearchForm = styled.div<Props>`
   display: flex;
   position: relative;
   margin-right: 0.5vw;
-  max-width: 300px;
+  max-width: 200px;
+
+  @media (max-width: 430px) {
+    position: fixed;
+    top: 16px;
+    right: 37%;
+    width: 200px;
+    z-index: ${(props) => (props.isClickSearch ? "3000" : "2000")};
+  }
+  @media (min-width: 430px) and (max-width: 515px) {
+    position: fixed;
+    top: 16px;
+    right: 34%;
+    width: 200px;
+    z-index: ${(props) => (props.isClickSearch ? "3000" : "2000")};
+  }
 `;
 
 export const SearchFormIcon = styled.button<Props>`
   position: absolute;
   top: 7px;
-  z-index: 2000;
+  z-index: 3000;
   cursor: pointer;
   right: 12px;
   transition: ease transform 0.8s;
@@ -55,7 +70,7 @@ export const SearchFormIcon = styled.button<Props>`
   color: #fff;
   opacity: 0.8;
   font-size: 1.5rem;
-  transform: ${(props) => props.isClickSearch && "translateX(-200px)"};
+  transform: ${(props) => props.isClickSearch && "translateX(-150px)"};
 `;
 
 export const SearchFormInput = styled.input<Props>`

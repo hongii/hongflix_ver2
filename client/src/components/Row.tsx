@@ -41,7 +41,7 @@ const Row = ({ title, id, fetchURL, isLargeRow }: Props) => {
       const { data: movieDetail } = await axios.get(`/movie/${movie.id}`, {
         params: { append_to_response: "videos" },
       });
-      console.log("clicked movie details : ", movieDetail);
+      // console.log("clicked movie details : ", movieDetail);
       setMovieSelected(movieDetail);
     } catch (error) {
       console.log(error);

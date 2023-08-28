@@ -18,7 +18,7 @@ export const NoResults = styled.section`
 `;
 
 export const NoResultsText = styled.div`
-  white-space: nowrap;
+  /* white-space: nowrap; */
 `;
 
 /* 찾는 영화 정보가 있는 경우 */
