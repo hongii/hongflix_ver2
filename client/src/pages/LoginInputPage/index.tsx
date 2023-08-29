@@ -24,8 +24,9 @@ const LoginInputPage = () => {
   }, [location.state]);
 
   const onSubmitHandler = async (e: FormEvent) => {
-    e.preventDefault();
+    e.preventDefault(); // form제출 시 기본 동작인 페이지 리로드 방지
     try {
+      //form 제출 시 원하는 작업 코드 부분
       const response = await axios.post(
         `${process.env.REACT_APP_SERVER_BASE_URL}/api/auth/login`,
         {
