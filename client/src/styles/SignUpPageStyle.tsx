@@ -45,7 +45,7 @@ export const SignUpBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 400px;
+  min-width: 370px;
   min-height: 500px;
 
   background: rgba(0, 0, 0, 0.8);

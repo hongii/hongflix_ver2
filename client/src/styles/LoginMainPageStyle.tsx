@@ -74,6 +74,14 @@ export const LoginSection = styled.section`
   justify-content: center;
   z-index: 100;
   padding: 1rem;
+
+  @media screen and (width < 407px) {
+    top: 30%;
+  }
+
+  @media screen and (407px <= width < 683px) {
+    top: 32%;
+  }
 `;
 
 export const Comment = styled.div`
@@ -81,7 +89,7 @@ export const Comment = styled.div`
   color: #ececec;
   margin-bottom: 1rem;
   font-weight: bold;
-  word-break: keep-all;
+  word-break: break-all;
 `;
 
 export const SmallComment = styled(Comment)`
