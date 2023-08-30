@@ -5,7 +5,8 @@ import InputGroup from "../../components/InputGroup";
 import axios from "../../api/axiosBackend";
 
 import { useDispatch } from "react-redux";
-import { userActions, userAuthActions } from "../../store/index";
+import { userActions } from "../../slices/userSlice";
+import { userAuthActions } from "../../slices/userAuthSlice";
 
 const LoginInputPage = () => {
   const [email, setEmail] = useState("");

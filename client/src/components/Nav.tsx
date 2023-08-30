@@ -6,7 +6,8 @@ import * as S from "../styles/NavStyle";
 import axios from "../api/axiosBackend";
 
 import { useDispatch } from "react-redux";
-import { userActions, userAuthActions } from "../store/index";
+import { userActions } from "../slices/userSlice";
+import { userAuthActions } from "../slices/userAuthSlice";
 
 const Nav = () => {
   const [navBlackShow, setShow] = useState<boolean>(false); //nav바의 배경색을 black으로(#111) 보이게 할지 말지 상태를 저장하는 state변수

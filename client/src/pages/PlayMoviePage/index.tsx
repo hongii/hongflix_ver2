@@ -6,7 +6,8 @@ import { MovieResults } from "../../api/responseMovie";
 import axios from "../../api/axios";
 import axiosBE from "../../api/axiosBackend";
 import Youtube from "../../components/Youtube";
-import { userActions, userAuthActions } from "../../store";
+import { userActions } from "../../slices/userSlice";
+import { userAuthActions } from "../../slices/userAuthSlice";
 import { useDispatch } from "react-redux";
 
 const PlayMoviePage = () => {

@@ -6,7 +6,8 @@ import { useDebounce } from "../../hooks/useDebounce";
 import { MovieResults } from "../../api/responseMovie";
 import MovieModal from "../../components/MovieModal";
 import * as S from "../../styles/SearchPageStyle";
-import { userActions, userAuthActions } from "../../store";
+import { userActions } from "../../slices/userSlice";
+import { userAuthActions } from "../../slices/userAuthSlice";
 import { useDispatch } from "react-redux";
 
 const SearchPage = () => {
