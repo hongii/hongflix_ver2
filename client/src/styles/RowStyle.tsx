@@ -54,6 +54,7 @@ export const RowPoster = styled.img<Props>`
   transition: transform 450ms;
   border-radius: 8px;
   max-height: ${(props) => (props.isLargeRow ? "320px" : "144px")};
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.1);
