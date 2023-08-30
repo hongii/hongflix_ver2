@@ -4,7 +4,8 @@ import Row from "../../components/Row";
 import requests from "../../api/requests";
 import axios from "../../api/axiosBackend";
 import { useDispatch } from "react-redux";
-import { userActions, userAuthActions } from "../../store";
+import { userActions } from "../../slices/userSlice";
+import { userAuthActions } from "../../slices/userAuthSlice";
 
 const MainPage = () => {
   const dispatch = useDispatch();
