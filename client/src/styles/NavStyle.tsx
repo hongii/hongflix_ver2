@@ -65,10 +65,10 @@ export const SearchForm = styled.div<Props>`
 
 export const SearchFormIcon = styled.button<Props>`
   position: absolute;
-  top: 7px;
+  top: 0.5rem;
   z-index: 3000;
+  right: 0.4rem;
   cursor: pointer;
-  right: 12px;
   transition: ease transform 0.8s;
   transition-delay: 40ms;
   color: #fff;

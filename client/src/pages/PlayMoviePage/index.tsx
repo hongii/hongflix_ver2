@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import * as S from "../../styles/BannerStyle";
 import { TbAlertCircle } from "react-icons/tb";
+import { BiArrowBack } from "react-icons/bi";
 import { useNavigate, useParams } from "react-router-dom";
 import { MovieResults } from "../../api/responseMovie";
 import axios from "../../api/axios";
@@ -63,25 +64,35 @@ const PlayMoviePage = () => {
   return (
     <S.Container>
       <S.HomeContainer>
-        <S.BackBtn
+        <BiArrowBack
           onClick={() => {
             navigate(-1);
           }}
-        >
-          ↩
-        </S.BackBtn>
+          style={{
+            backgroundColor: "rgba(74, 74, 74, 1)",
+            borderRadius: "50%",
+            position: "absolute",
+            top: "0.8rem",
+            left: "0.5rem",
+            marginTop: "0.2rem",
+            width: "40px",
+            height: "40px",
+            color: "#ececec",
+            zIndex: "1000",
+            fontSize: "2.3rem",
+            cursor: "pointer",
+          }}
+        />
         {movie?.videos?.results.length === 0 ? (
           <S.NoVideo>
-            {/* <TbAlertCircle style={{ color: "#666", paddingRight: "10px" }} /> */}
-            <S.Text>
-              <TbAlertCircle
-                style={{
-                  color: "#666",
-                  paddingRight: "10px",
-                }}
-              />
-              재생 가능한 영상이 없습니다.
-            </S.Text>
+            <TbAlertCircle
+              style={{
+                color: "#666",
+                fontSize: "calc(1.1rem + 0.5vw)",
+                paddingRight: "0.5rem",
+              }}
+            />
+            <S.Text>재생 가능한 영상이 없습니다.</S.Text>
           </S.NoVideo>
         ) : (
           <Youtube

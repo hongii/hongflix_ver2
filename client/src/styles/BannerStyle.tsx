@@ -61,6 +61,7 @@ export const PlayButton = styled(Button)`
   background-color: #fff;
   opacity: 1;
   text-align: center;
+  color: #000;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.75);
@@ -103,6 +104,7 @@ export const Description = styled.div`
 `;
 
 export const FadeButton = styled.div`
+  min-height: 4rem;
   flex-grow: 1;
   background-image: linear-gradient(
     180deg,
@@ -126,25 +128,6 @@ export const Container = styled.div`
 export const HomeContainer = styled.div`
   width: 100%;
   height: 100%;
-`;
-
-export const BackBtn = styled.button`
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0.8rem;
-  left: 0.5rem;
-  margin-top: 0.1rem;
-
-  border-radius: 50%;
-  background-color: rgba(74, 74, 74, 1);
-  width: 40px;
-  height: 40px;
-  color: white;
-  z-index: 1000;
-  font-size: 2.3rem;
-  font-weight: bold;
 `;
 
 export const Iframe = styled.iframe`

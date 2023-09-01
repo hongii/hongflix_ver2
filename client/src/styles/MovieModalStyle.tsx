@@ -121,9 +121,9 @@ export const Button = styled.button`
 export const PlayButton = styled(Button)`
   background-color: white;
   text-align: center;
+  color: #000;
 
   &:hover {
-    color: #000;
     background-color: rgba(170, 170, 170, 0.9);
     transition: all 0.2s;
   }
