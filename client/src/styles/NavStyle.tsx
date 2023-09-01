@@ -64,10 +64,11 @@ export const SearchForm = styled.div<Props>`
 `;
 
 export const SearchFormIcon = styled.button<Props>`
+  padding-right: 0.2rem;
   position: absolute;
   top: 0.5rem;
   z-index: 3000;
-  right: 0.4rem;
+  right: 0.5rem;
   cursor: pointer;
   transition: ease transform 0.8s;
   transition-delay: 40ms;
@@ -85,7 +86,7 @@ export const SearchFormInput = styled.input<Props>`
   color: #fff;
   background-color: rgba(0, 0, 0, 0.8);
   border: solid 1.5px rgba(255, 255, 255, 0.8);
-  padding: 10px 14px 10px 40px;
+  padding: 10px 12px 10px 40px;
   transition: ease width 0.8s, ease opacity 0.8s;
   opacity: ${(props) => props.isClickSearch && "1"};
   width: ${(props) => props.isClickSearch && "100%"};
