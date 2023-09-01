@@ -7,8 +7,8 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
 const app = express();
-const origin = process.env.ORIGIN;
-app.use(cors({ origin, credentials: true }));
+// const origin = process.env.ORIGIN;
+app.use(cors({ origin: true, credentials: true }));
 
 app.use(express.json()); // JSON 형태의 요청 body를 파싱하기 위해 express.json() 미들웨어를 사용
 app.use(morgan("dev")); // morgan 미들웨어 사용 -> dev 옵션 기준으로 GET / 500 7.409 ms - 50 은 각각 [HTTP메서드][주소][HTTP상태코드][응답속도] - [응답바이트]

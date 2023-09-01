@@ -80,10 +80,6 @@ export const Modal = styled.div<Props>`
       transform: scale(0.5);
     }
   }
-
-  @media screen and (max-height: 768px) {
-    overflow-y: scroll !important;
-  }
 `;
 
 export const PosterImg = styled.img`
@@ -105,10 +101,6 @@ export const Title = styled.p`
 export const Details = styled.div`
   font-weight: 600;
   font-size: calc(0.55rem + 0.55vw);
-
-  @media screen and (max-height: 768px) {
-    font-size: 16px;
-  }
 `;
 
 export const Button = styled.button`
@@ -175,8 +167,4 @@ export const GenreItem = styled.span`
 export const Overview = styled.p`
   line-height: 1.4;
   font-weight: normal;
-
-  @media screen and (max-height: 768px) {
-    font-size: 16px;
-  }
 `;
