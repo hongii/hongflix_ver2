@@ -3,8 +3,7 @@ import React, { useEffect } from "react";
 맞다면 계속 모달창을 띄우고 아니라면(외부를 클릭한 것이라면) 모달창을 닫아주는 커스텀 훅*/
 const useOnClickOutside = (
   ref: React.RefObject<HTMLDivElement>,
-  setFunc: (type: boolean) => void,
-  setIsClosed?: (type: boolean) => void
+  setFunc: (type: boolean) => void
 ) => {
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -19,12 +18,7 @@ const useOnClickOutside = (
         return;
       } else {
         /* 클릭한 부분이 modal창 또는 검색창 외부인 경우 */
-        if (setIsClosed) {
-          setIsClosed(true);
-        }
-        timer = setTimeout(() => {
-          setFunc(false);
-        }, 300);
+        setFunc(false);
       }
     };
     document.addEventListener("mousedown", modalOnOffListener as EventListener);
@@ -48,7 +42,7 @@ const useOnClickOutside = (
         modalOnOffListener as EventListener
       );
     };
-  }, [ref, setFunc, setIsClosed]);
+  }, [ref, setFunc]);
 };
 
 export default useOnClickOutside;

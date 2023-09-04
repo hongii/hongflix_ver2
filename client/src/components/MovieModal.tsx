@@ -15,13 +15,13 @@ interface Props {
 const MovieModal = ({ movieSelected, setModalOpen, rowID }: Props) => {
   let ref = useRef<HTMLDivElement>(null); // "modal"이라는 클래스가 있는 DOM객체를 포함하는지 판별하기 위한 객체
   const [isVideoPlay, setVideoPlay] = useState<boolean>(true);
-  const [isClosed, setIsClosed] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const navigate = useNavigate();
-  useOnClickOutside(ref, setModalOpen, setIsClosed); // 모달창 외부를 클릭했는지 판별
+  useOnClickOutside(ref, setIsOpen); // 모달창 외부를 클릭했는지 판별
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
-    if (isClosed) {
+    if (!isOpen) {
       timer = setTimeout(() => {
         setModalOpen(false);
       }, 300);
@@ -31,16 +31,16 @@ const MovieModal = ({ movieSelected, setModalOpen, rowID }: Props) => {
         clearTimeout(timer);
       }
     };
-  }, [isClosed, setModalOpen]);
+  }, [isOpen, setModalOpen]);
 
   return (
     <S.Presentation>
       <S.WrapperModal>
-        <S.Modal isClosed={isClosed} ref={ref}>
+        <S.Modal isClosed={!isOpen} ref={ref}>
           <IoIosCloseCircle
             className="modal__closed"
             onClick={() => {
-              setIsClosed(true);
+              setIsOpen(false);
             }}
           />
           {movieSelected.media_type === "tv" ||

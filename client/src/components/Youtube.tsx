@@ -21,11 +21,11 @@ const Youtube = ({
     console.log("Error Number:", event.data);
     if (
       setVideoPlay &&
-      (event.data === 2 ||
-        event.data === 5 ||
-        event.data === 100 ||
-        event.data === 101 ||
-        event.data === 150)
+      (+event.data === 2 ||
+        +event.data === 5 ||
+        +event.data === 100 ||
+        +event.data === 101 ||
+        +event.data === 150)
     ) {
       setVideoPlay(false);
     }
