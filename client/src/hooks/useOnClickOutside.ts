@@ -6,7 +6,6 @@ const useOnClickOutside = (
   setFunc: (type: boolean) => void
 ) => {
   useEffect(() => {
-    let timer: NodeJS.Timeout;
     const modalOnOffListener = (
       event: CustomEvent<MouseEvent> | CustomEvent<TouchEvent>
     ) => {
@@ -30,9 +29,6 @@ const useOnClickOutside = (
     // 		click evnet => 사용자가 해당 element를 클릭했을 때(버튼을 눌렀다가 떼었을 때) 발생
 
     return () => {
-      if (timer !== undefined) {
-        clearTimeout(timer);
-      }
       document.removeEventListener(
         "mousedown",
         modalOnOffListener as EventListener
