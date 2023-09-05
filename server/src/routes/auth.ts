@@ -104,12 +104,14 @@ const login = async (req: Request, res: Response) => {
         sameSite: "strict",
         secure: process.env.NODE_ENV === "production",
         path: "/",
+        maxAge: 60 * 60 * 24 * 14,
       }),
       cookie.serialize("refreshToken", refreshToken, {
         httpOnly: true,
         sameSite: "strict",
         secure: process.env.NODE_ENV === "production",
         path: "/",
+        maxAge: 60 * 60 * 24 * 14,
       }),
     ]);
 
@@ -235,12 +237,14 @@ const refreshToken = async (req: Request, res: Response) => {
         sameSite: "strict",
         secure: process.env.NODE_ENV === "production",
         path: "/",
+        maxAge: 60 * 60 * 24 * 14,
       }),
       cookie.serialize("refreshToken", newRefreshToken, {
         httpOnly: true,
         sameSite: "strict",
         secure: process.env.NODE_ENV === "production",
         path: "/",
+        maxAge: 60 * 60 * 24 * 14,
       }),
     ]);
 
