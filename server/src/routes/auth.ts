@@ -180,7 +180,7 @@ const checkAcessToken = async (req: Request, res: Response) => {
 
     const user = await User.findOneBy({ email });
     if (!user) {
-      return res.status(400).json({ error: "invalid acess token" });
+      return res.status(400).json({ error: "Invalid access token" });
     }
 
     const currentTime = Math.floor(Date.now() / 1000);
@@ -199,7 +199,7 @@ const checkAcessToken = async (req: Request, res: Response) => {
       // Access Token이 유효하지 않은 경우
       return res.status(400).json({ error: "Invalid access token" });
     } else {
-      return res.status(500).json({ error: "Token refresh failed" });
+      return res.status(500).json(error);
     }
   }
 };
@@ -253,7 +253,15 @@ const refreshToken = async (req: Request, res: Response) => {
       .json({ success: "Success: refresh token", accessToken: newAccessToken });
   } catch (error) {
     console.error(error.name);
-    return res.status(500).json({ error: "Token refresh failed" });
+    if (error.name === "TokenExpiredError") {
+      // Refresh Token이 만료된 경우
+      return res.status(401).json({ error: "Refresh token is expired" });
+    } else if (error.name === "JsonWebTokenError") {
+      // Refresh Token이 유효하지 않은 경우
+      return res.status(400).json({ error: "Invalid refresh token" });
+    } else {
+      return res.status(500).json(error);
+    }
   }
 };
 
@@ -262,7 +270,7 @@ router.post("/signup", signup);
 router.post("/login", login);
 router.post("/logout", logout);
 router.post("/findUser", findUser);
-router.post("/checkAcessToken", checkAcessToken);
+router.get("/checkAcessToken", checkAcessToken);
 router.post("/refreshToken", refreshToken);
 
 export default router;

@@ -12,7 +12,7 @@ const MainPage = () => {
   useEffect(() => {
     const checkAccessToken = async () => {
       try {
-        await axios.post(
+        await axios.get(
           `${process.env.REACT_APP_SERVER_BASE_URL}/api/auth/checkAcessToken`
         );
       } catch (error: any) {
