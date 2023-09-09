@@ -172,6 +172,10 @@ const checkAcessToken = async (req: Request, res: Response) => {
   try {
     const accessToken = req.cookies.accessToken;
 
+    if (!accessToken) {
+      return res.status(404).json({ error: "Accees token does not exist." });
+    }
+
     // access token의 유효성 및 만료기한 검증
     const { email, exp }: any = jwt.verify(
       accessToken,
@@ -183,13 +187,7 @@ const checkAcessToken = async (req: Request, res: Response) => {
       return res.status(400).json({ error: "Invalid access token" });
     }
 
-    const currentTime = Math.floor(Date.now() / 1000);
-    if (exp > currentTime) {
-      // 토큰이 만료되기 1분 전까지는 유효한 토큰으로 간주
-      return res.status(200).json({ success: " Valid access token" });
-    } else {
-      return res.status(401).json({ error: "Access token is expired" });
-    }
+    return res.status(200).json({ success: " Valid access token" });
   } catch (error) {
     console.error(error.name);
     if (error.name === "TokenExpiredError") {
@@ -209,7 +207,7 @@ const refreshToken = async (req: Request, res: Response) => {
   try {
     const refreshToken = req.cookies.refreshToken;
     if (!refreshToken) {
-      return res.status(404).json("This refresh token does not exist.");
+      return res.status(404).json({ error: "Refresh token does not exist." });
     }
 
     // refresh token의 유효성 및 만료기한 검증
