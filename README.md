@@ -32,7 +32,7 @@
 - Database - Docker(Postgresql)
   <br/>
 
-## 페이지 별 기능 설명:mag:
+## 페이지 설명:mag:
 
 ### [로그인한 사용자가 접근 가능한 페이지]
 
@@ -40,11 +40,10 @@
 
 <img src="https://github.com/hongii/hongflix_ver2/assets/93701887/9fac5725-a921-49c7-b342-972f2aebb662" width="50%" height="50%" alt="MainPage"></img>
 
-- 배너에는 현재 상영중인 영화를 랜덤으로 보여준다.
 - 현재 인기있는 영화 목록과 각 장르별 영화들(로맨스, 공포, 액션, 코미디 등)을 슬라이드로 넘기면서 확인할 수 있다.
 - 메인화면에서 보여지는 영화를 클릭하면, 영화에 대한 상세정보를 확인할 수 있는 모달창이 보여진다.
 - 검색창을 클릭하여 영화를 검색할 수 있다.
-- 로그아웃 버튼을 눌러 현재 사용중인 사용자의 정보를 삭제할 수 있다. 이 때, 사용자는 로그인 하지 않은 사용자가 접근 가능한 페이지 중 메인페이지(LoginMainPage)로 이동된다.
+- 로그아웃 버튼을 눌러 현재 사용중인 사용자의 정보를 삭제할 수 있다.
   </br>
 
 **2. 영화 검색 페이지(SearchPage)**
@@ -64,10 +63,9 @@
 
 **cf. 모달창에 보여지는 영화 상세 정보**
 
-<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/fc323008-6899-47d0-af41-9c54bcf79fb4" width="50%" height="50%" alt="MainPage"></img>
+<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/fc323008-6899-47d0-af41-9c54bcf79fb4" width="47%" height="45%" alt="MainPage"></img> <img src="https://github.com/hongii/hongflix_ver2/assets/93701887/abcd3eb6-ff95-4e36-a468-e39c207f8165" width="45%" height="45%" alt="MainPage"></img>
 
-- 해당 영화가 재생 가능한 영상 정보를 가지고 있는 경우, 영상을 자동으로 재생시켜서 보여준다. 이 때, “재생”버튼을 누르면 해당 영화를 재생하는 영화 재생 페이지로 이동한다.
-- 만약 영상 정보를 가지고 있지 않다면, 대표 이미지를 보여준다.
+- 해당 영화가 재생 가능한 영상 정보를 가지고 있는 경우, 영상을 자동으로 재생시켜서 보여준다. 영상 정보를 가지고 있지 않다면, 대표 이미지를 보여준다.
 - 영화 제목, 영화 개봉일, 상영시간, 영화 줄거리, 영화 평점, 영화 장르에 대한 정보를 확인할 수 있다.
 
 </br>
@@ -84,19 +82,19 @@
 
   </br>
 
-**2. 로그인 페이지(LoginInputPage)**
-
-<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/16e8b5af-9459-4d2c-b682-1482d6ad85c9" width="50%" height="50%" alt="MainPage"></img>
-
-- 회원가입을 완료한 유저는 자동으로 로그인 페이지로 이동된다.
-- 또는 메인 페이지(LoginMainPage)에서 “로그인”버튼을 클릭하거나 이미 가입된 이메일 주소를 입력한 경우에도 로그인 페이지로 이동된다.
-- 가입된 유저 정보와 현재 유저가 입력한 유저 정보가 일치한다면 로그인에 성공하여 위에서 언급한 로그인한 사용자가 접근 가능한 페이지 중 메인 페이지(MainPage)로 이동하게 된다.
-  </br>
-
-**3. 회원가입 페이지(SignUpPage)**
+**2. 회원가입 페이지(SignUpPage)**
 
 <img src="https://github.com/hongii/hongflix_ver2/assets/93701887/779b9bb8-13cf-4ec2-b81b-6a1e093bb506" width="50%" height="50%" alt="MainPage"></img>
 
-- 메인페이지(LoginMainPage)에서 아직 가입되지 않은 이메일 주소를 입력할 경우, 회원가입 페이지로 이동된다.
 - 유저는 이메일 주소, 사용자 이름, 비밀번호를 입력한 후 “가입하기” 버튼을 클릭하여 회원가입을 완료할 수 있다.
 - 회원가입이 완료된 유저는 로그인페이지(LoginInputPage)로 이동된다.
+
+</br>
+
+**3. 로그인 페이지(LoginInputPage)**
+
+<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/16e8b5af-9459-4d2c-b682-1482d6ad85c9" width="50%" height="50%" alt="MainPage"></img>
+
+- 가입된 유저 정보와 현재 유저가 입력한 유저 정보가 일치한다면 로그인에 성공하여 위에서 언급한 로그인한 사용자가 접근 가능한 페이지 중 메인 페이지(MainPage)로 이동하게 된다.
+
+  </br>
