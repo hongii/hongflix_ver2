@@ -2,6 +2,7 @@
 
 보고싶은 영화를 검색하고 영화 예고편 및 영화 정보를 볼 수 있는 영화 검색 사이트(넷플릭스 클론코딩)  
  :point_right: [Notion 정리 바로가기](https://hongii.notion.site/HONGFLIX-e545602d82fb4898b5f61d351fba9306?pvs=4)
+
 :point_right:[배포(AWS)사이트 바로가기](http://ec2-3-35-82-214.ap-northeast-2.compute.amazonaws.com/)
 <br/>
 
@@ -79,6 +80,7 @@
 - 가입할 이메일 주소를 입력하고 “시작하기”버튼을 클릭하면 회원가입 페이지(SignUpPage)로 이동할 수 있다.
 - 만약, 입력한 이메일 주소가 이미 가입된 회원 이메일 주소인 경우, 로그인 페이지(LoginInputPage)로 이동된다.
 - 우측 상단 “로그인” 버튼을 클릭하여 바로 로그인 페이지(LoginInputPage)로 이동할 수도 있다.
+
   </br>
 
 **2. 로그인 페이지(LoginInputPage)**
