@@ -38,7 +38,7 @@
 
 **1. 메인 페이지(MainPage)**
 
-<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/28e5f017-4edf-4e49-86df-1a21d2e1336c" width="50%" height="50%" alt="MainPage"></img>
+<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/9fac5725-a921-49c7-b342-972f2aebb662" width="50%" height="50%" alt="MainPage"></img>
 
 - 배너에는 현재 상영중인 영화를 랜덤으로 보여준다.
 - 현재 인기있는 영화 목록과 각 장르별 영화들(로맨스, 공포, 액션, 코미디 등)을 슬라이드로 넘기면서 확인할 수 있다.
@@ -49,7 +49,7 @@
 
 **2. 영화 검색 페이지(SearchPage)**
 
-<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/99e53f3d-8f8c-464f-8f96-d2adfa72e6bd" width="50%" height="50%" alt="MainPage"></img>
+<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/6fdc9f72-3c6f-4088-83fa-2cfe029a1522" width="50%" height="50%" alt="MainPage"></img>
 
 - 메인 페이지(MainPage)의 검색창에 찾고자 하는 영화 제목을 입력할 경우, 해당 제목이 포함된 영화의 목록을 보여준다.
 - 검색된 영화를 클릭하면, 영화의 상세 정보를 확인할 수 있는 모달창을 보여준다.
@@ -57,14 +57,14 @@
 
 **3. 영화 재생 페이지(PlayMoviePage)**
 
-<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/cf0ee83b-c912-4320-8461-af1acf7db758" width="50%" height="50%" alt="MainPage"></img>
+<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/7e785412-afbd-4e69-a6d7-6ac59a068d2c" width="50%" height="50%" alt="MainPage"></img>
 
 - 메인 페이지((LoginInputPage))의 배너에 있는 “재생”버튼을 클릭하거나, 모달창의 “재생”버튼을 클릭한 경우에 영화 재생 페이지로 이동하여 영화 예고편(유튜브 영상)을 전체화면으로 재생한다.
   </br>
 
 **cf. 모달창에 보여지는 영화 상세 정보**
 
-<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/4d2be0f9-50b4-4ab4-b838-2264247b5b64" width="50%" height="50%" alt="MainPage"></img>
+<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/fc323008-6899-47d0-af41-9c54bcf79fb4" width="50%" height="50%" alt="MainPage"></img>
 
 - 해당 영화가 재생 가능한 영상 정보를 가지고 있는 경우, 영상을 자동으로 재생시켜서 보여준다. 이 때, “재생”버튼을 누르면 해당 영화를 재생하는 영화 재생 페이지로 이동한다.
 - 만약 영상 정보를 가지고 있지 않다면, 대표 이미지를 보여준다.
@@ -76,7 +76,7 @@
 
 **1. 메인 페이지(LoginMainPage)**
 
-<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/a4245265-c53e-47ee-9f06-865d3af6e0a5" width="50%" height="50%" alt="MainPage"></img>
+<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/be18df38-1c57-40ee-a755-946ce84d748e" width="50%" height="50%" alt="MainPage"></img>
 
 - 가입할 이메일 주소를 입력하고 “시작하기”버튼을 클릭하면 회원가입 페이지(SignUpPage)로 이동할 수 있다.
 - 만약, 입력한 이메일 주소가 이미 가입된 회원 이메일 주소인 경우, 로그인 페이지(LoginInputPage)로 이동된다.
@@ -86,7 +86,7 @@
 
 **2. 로그인 페이지(LoginInputPage)**
 
-<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/1465da9f-a1f7-4c6b-847f-cbde27e6b349" width="50%" height="50%" alt="MainPage"></img>
+<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/16e8b5af-9459-4d2c-b682-1482d6ad85c9" width="50%" height="50%" alt="MainPage"></img>
 
 - 회원가입을 완료한 유저는 자동으로 로그인 페이지로 이동된다.
 - 또는 메인 페이지(LoginMainPage)에서 “로그인”버튼을 클릭하거나 이미 가입된 이메일 주소를 입력한 경우에도 로그인 페이지로 이동된다.
@@ -95,7 +95,7 @@
 
 **3. 회원가입 페이지(SignUpPage)**
 
-<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/0d3a6113-9891-4a82-971f-f979130b910e" width="50%" height="50%" alt="MainPage"></img>
+<img src="https://github.com/hongii/hongflix_ver2/assets/93701887/779b9bb8-13cf-4ec2-b81b-6a1e093bb506" width="50%" height="50%" alt="MainPage"></img>
 
 - 메인페이지(LoginMainPage)에서 아직 가입되지 않은 이메일 주소를 입력할 경우, 회원가입 페이지로 이동된다.
 - 유저는 이메일 주소, 사용자 이름, 비밀번호를 입력한 후 “가입하기” 버튼을 클릭하여 회원가입을 완료할 수 있다.
