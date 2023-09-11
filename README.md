@@ -2,8 +2,6 @@
 
 보고싶은 영화를 검색하고 영화 예고편 및 영화 정보를 볼 수 있는 영화 검색 사이트(넷플릭스 클론코딩)
 
-:point_right: [Notion 정리 바로가기](https://hongii.notion.site/HONGFLIX-e545602d82fb4898b5f61d351fba9306?pvs=4)
-
 :point_right:[배포(AWS)사이트 바로가기](http://ec2-3-35-82-214.ap-northeast-2.compute.amazonaws.com/)
 <br/>
 
