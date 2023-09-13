@@ -49,6 +49,9 @@ const PlayMoviePage = () => {
             dispatch(userActions.logout());
           }
         } else {
+          window.alert(
+            "로그인 인증 기간이 만료되었습니다. 로그인을 다시 진행해주세요."
+          );
           dispatch(userAuthActions.logout());
           dispatch(userActions.logout());
         }
