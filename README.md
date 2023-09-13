@@ -2,8 +2,6 @@
 
 보고싶은 영화를 검색하고 영화 예고편 및 영화 정보를 볼 수 있는 영화 검색 사이트(넷플릭스 클론코딩)
 
-:point_right:[배포(AWS)사이트 바로가기](http://ec2-3-35-82-214.ap-northeast-2.compute.amazonaws.com/)
-<br/>
 
 ## 개인 프로젝트 진행 기간:calendar:
 
