@@ -268,7 +268,7 @@ router.post("/signup", signup);
 router.post("/login", login);
 router.post("/logout", logout);
 router.post("/findUser", findUser);
-router.get("/checkAcessToken", checkAcessToken);
+router.post("/checkAcessToken", checkAcessToken);
 router.post("/refreshToken", refreshToken);
 
 export default router;

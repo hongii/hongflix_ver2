@@ -3,6 +3,7 @@ import axios from "../api/axios";
 import MovieModal from "./MovieModal";
 import type { MovieResults } from "../api/responseMovie";
 import * as S from "../styles/RowStyle";
+import { fetchMovieVideo } from "../services/fetchMovieVideo";
 
 /* import Swiper core and required modules */
 import { Navigation, Pagination, Scrollbar } from "swiper";
@@ -36,21 +37,9 @@ const Row = ({ title, id, fetchURL, isLargeRow }: Props) => {
     }
   }, [fetchURL]);
 
-  const fetchMovieVideo = async (movie: MovieResults) => {
-    try {
-      const { data: movieDetail } = await axios.get(`/movie/${movie.id}`, {
-        params: { append_to_response: "videos" },
-      });
-      // console.log("clicked movie details : ", movieDetail);
-      setMovieSelected(movieDetail);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   const movieClickHandler = async (movie: MovieResults) => {
     if (id !== "OG" && movie.media_type !== "tv") {
-      await fetchMovieVideo(movie);
+      await fetchMovieVideo(movie.id.toString(), setMovieSelected);
     } else {
       setMovieSelected(movie);
     }

@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import * as S from "../../styles/BannerStyle";
 import { TbAlertCircle } from "react-icons/tb";
 import { BiArrowBack } from "react-icons/bi";
 import { useNavigate, useParams } from "react-router-dom";
 import { MovieResults } from "../../api/responseMovie";
-import axios from "../../api/axios";
 import axiosBE from "../../api/axiosBackend";
 import Youtube from "../../components/Youtube";
 import { userActions } from "../../slices/userSlice";
 import { userAuthActions } from "../../slices/userAuthSlice";
 import { useDispatch } from "react-redux";
+import { fetchMovieVideo } from "../../services/fetchMovieVideo";
 
 const PlayMoviePage = () => {
   let { movieId } = useParams();
@@ -17,21 +17,10 @@ const PlayMoviePage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const fetchData = useCallback(async () => {
-    try {
-      const { data: movieDetail } = await axios.get(`/movie/${movieId}`, {
-        params: { append_to_response: "videos" },
-      });
-      setMovie(movieDetail);
-    } catch (error) {
-      console.log(error);
-    }
-  }, [movieId]);
-
   useEffect(() => {
     const checkAccessToken = async () => {
       try {
-        await axiosBE.get(
+        await axiosBE.post(
           `${process.env.REACT_APP_SERVER_BASE_URL}/api/auth/checkAcessToken`
         );
       } catch (error: any) {
@@ -61,8 +50,8 @@ const PlayMoviePage = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    fetchMovieVideo(movieId, setMovie);
+  }, [movieId]);
 
   return (
     <S.Container>

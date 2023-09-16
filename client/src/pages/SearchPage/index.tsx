@@ -35,7 +35,7 @@ const SearchPage = () => {
   useEffect(() => {
     const checkAccessToken = async () => {
       try {
-        await axiosBE.get(
+        await axiosBE.post(
           `${process.env.REACT_APP_SERVER_BASE_URL}/api/auth/checkAcessToken`
         );
       } catch (error: any) {

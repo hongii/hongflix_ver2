@@ -5,6 +5,7 @@ import type { MovieResults } from "../api/responseMovie";
 import MovieModal from "./MovieModal";
 import { useNavigate } from "react-router-dom";
 import * as S from "../styles/BannerStyle";
+import { fetchMovieVideo } from "../services/fetchMovieVideo";
 
 const Banner = () => {
   let [movie, setMovie] = useState<MovieResults | null>(null);
@@ -23,11 +24,7 @@ const Banner = () => {
         ].id;
 
       // 랜덤으로 가져온 영화의 세부정보를 가져오기(video 정보도 포함시킴)
-      const { data: movieDetail } = await axios.get(`/movie/${movieId}`, {
-        params: { append_to_response: "videos" },
-      });
-      setMovie(movieDetail);
-      // console.log("[banner] fetch result(movie detail): ", movieDetail);
+      await fetchMovieVideo(movieId.toString(), setMovie);
     } catch (error) {
       console.log(error);
     }
