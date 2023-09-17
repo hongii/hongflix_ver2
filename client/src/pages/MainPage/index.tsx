@@ -2,43 +2,14 @@ import React, { useEffect } from "react";
 import Banner from "../../components/Banner";
 import Row from "../../components/Row";
 import requests from "../../api/requests";
-import axios from "../../api/axiosBackend";
 import { useDispatch } from "react-redux";
-import { userActions } from "../../slices/userSlice";
-import { userAuthActions } from "../../slices/userAuthSlice";
+import { checkAccessToken } from "../../services/checkTokenApi";
 
 const MainPage = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
-    const checkAccessToken = async () => {
-      try {
-        await axios.post(
-          `${process.env.REACT_APP_SERVER_BASE_URL}/api/auth/checkAcessToken`
-        );
-      } catch (error: any) {
-        if (error.response.status === 401) {
-          try {
-            const resRefresh = await axios.post(
-              `${process.env.REACT_APP_SERVER_BASE_URL}/api/auth/refreshToken`
-            );
-            if (resRefresh.status === 201) {
-              console.log(resRefresh.data.success);
-              dispatch(userActions.refreshAccessTk(resRefresh.data));
-            }
-          } catch (error) {
-            dispatch(userAuthActions.logout());
-            dispatch(userActions.logout());
-          }
-        } else {
-          window.alert(
-            "로그인 인증 기간이 만료되었습니다. 로그인을 다시 진행해주세요."
-          );
-          dispatch(userAuthActions.logout());
-          dispatch(userActions.logout());
-        }
-      }
-    };
-    checkAccessToken();
+    checkAccessToken(dispatch);
   }, [dispatch]);
 
   return (

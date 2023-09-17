@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import axios from "../../api/axios";
-import axiosBE from "../../api/axiosBackend";
 import { useDebounce } from "../../hooks/useDebounce";
 import { MovieResults } from "../../api/responseMovie";
 import MovieModal from "../../components/MovieModal";
 import * as S from "../../styles/SearchPageStyle";
-import { userActions } from "../../slices/userSlice";
-import { userAuthActions } from "../../slices/userAuthSlice";
 import { useDispatch } from "react-redux";
+import { checkAccessToken } from "../../services/checkTokenApi";
 
 const SearchPage = () => {
   const [searchResults, setSearchResults] = useState<Array<MovieResults>>([]);
@@ -33,35 +31,7 @@ const SearchPage = () => {
   };
 
   useEffect(() => {
-    const checkAccessToken = async () => {
-      try {
-        await axiosBE.post(
-          `${process.env.REACT_APP_SERVER_BASE_URL}/api/auth/checkAcessToken`
-        );
-      } catch (error: any) {
-        if (error.response.status === 401) {
-          try {
-            const resRefresh = await axiosBE.post(
-              `${process.env.REACT_APP_SERVER_BASE_URL}/api/auth/refreshToken`
-            );
-            if (resRefresh.status === 201) {
-              console.log(resRefresh.data.success);
-              dispatch(userActions.refreshAccessTk(resRefresh.data));
-            }
-          } catch (error) {
-            dispatch(userAuthActions.logout());
-            dispatch(userActions.logout());
-          }
-        } else {
-          window.alert(
-            "로그인 인증 기간이 만료되었습니다. 로그인을 다시 진행해주세요."
-          );
-          dispatch(userAuthActions.logout());
-          dispatch(userActions.logout());
-        }
-      }
-    };
-    checkAccessToken();
+    checkAccessToken(dispatch);
   }, [dispatch]);
 
   useEffect(() => {

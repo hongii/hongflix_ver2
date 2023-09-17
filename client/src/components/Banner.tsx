@@ -8,8 +8,8 @@ import * as S from "../styles/BannerStyle";
 import { fetchMovieVideo } from "../services/fetchMovieVideo";
 
 const Banner = () => {
-  let [movie, setMovie] = useState<MovieResults | null>(null);
-  let [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [movie, setMovie] = useState<MovieResults | null>(null);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const fetchData = async () => {
