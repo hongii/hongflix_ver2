@@ -79,6 +79,7 @@ const Nav = () => {
       <S.NavSecondary>
         <S.SearchForm ref={ref} isClickSearch={isClickSearch}>
           <S.SearchFormIcon
+            aria-label="search form icon button"
             isClickSearch={isClickSearch}
             onClick={clickHandler}
           >
@@ -98,7 +99,9 @@ const Nav = () => {
           alt="User profile"
           src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117"
         />
-        <S.LogoutBtn onClick={LogoutHandler}>로그아웃</S.LogoutBtn>
+        <S.LogoutBtn aria-label="logout button" onClick={LogoutHandler}>
+          로그아웃
+        </S.LogoutBtn>
       </S.NavSecondary>
     </S.NavContainer>
   );

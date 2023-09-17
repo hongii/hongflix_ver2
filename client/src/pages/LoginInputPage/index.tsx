@@ -83,7 +83,7 @@ const LoginInputPage = () => {
               error={errors.password}
               placeholder="비밀번호를 입력하세요."
             />
-            <S.SubmitBtn>로그인</S.SubmitBtn>
+            <S.SubmitBtn aria-label="login button">로그인</S.SubmitBtn>
             <S.SignUpLinkComment>
               회원이 아니신가요?
               <S.SignUpLink

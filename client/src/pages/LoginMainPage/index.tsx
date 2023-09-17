@@ -50,6 +50,7 @@ const LoginMainPage = () => {
           />
           <S.LoginBtnContainer>
             <S.LoginBtn
+              aria-label="login button"
               onClick={() => {
                 navigate("/login");
                 setEmail("");
@@ -73,7 +74,7 @@ const LoginMainPage = () => {
               onChange={changeHandler}
               onKeyDown={onKeyDownEnter}
             />
-            <S.StartBtn onClick={clickHandler}>
+            <S.StartBtn aria-label="start button" onClick={clickHandler}>
               {`시작하기 `}
               <FaChevronRight />
             </S.StartBtn>

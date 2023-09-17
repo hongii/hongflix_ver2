@@ -39,7 +39,10 @@ const NotFoundPage = () => {
           아래 버튼을 클릭하여 홈페이지로 이동해주세요.
         </S.SmallComment>
 
-        <S.StartBtn onClick={clickHandler}>{`NETFLIX 홈 `}</S.StartBtn>
+        <S.StartBtn
+          aria-label="home button"
+          onClick={clickHandler}
+        >{`NETFLIX 홈 `}</S.StartBtn>
         <S.ErrorCode>오류코드 : 404 NOT FOUND</S.ErrorCode>
       </S.Section>
     </S.LoginContainer>

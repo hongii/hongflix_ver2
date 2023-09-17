@@ -45,6 +45,7 @@ const Banner = () => {
 
         <S.Buttons>
           <S.PlayButton
+            aria-label="play button"
             onClick={() => {
               navigate(`/playmovie/${movie?.id}`);
             }}
@@ -53,6 +54,7 @@ const Banner = () => {
             <div>재생</div>
           </S.PlayButton>
           <S.InfoButton
+            aria-label="info button"
             onClick={() => {
               setModalOpen(true);
             }}

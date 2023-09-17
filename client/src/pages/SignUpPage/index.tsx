@@ -85,7 +85,7 @@ const SignUpPage = () => {
               setValue={setPassword}
               placeholder={"비밀번호를 입력하세요."}
             />
-            <S.SubmitBtn>가입하기</S.SubmitBtn>
+            <S.SubmitBtn aria-label="sign up button">가입하기</S.SubmitBtn>
             <S.LoginLinkComment>
               이미 가입되어 있으신가요?
               <S.LoginLink

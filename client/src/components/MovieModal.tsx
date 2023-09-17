@@ -70,6 +70,7 @@ const MovieModal = ({ movieSelected, setModalOpen, rowID }: Props) => {
             <S.Details>
               {movieSelected?.videos?.results[0] && (
                 <S.PlayButton
+                  aria-label="play button"
                   onClick={() => {
                     navigate(`/playmovie/${movieSelected.id}`);
                   }}
