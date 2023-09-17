@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as S from "../../styles/BannerStyle";
-import { TbAlertCircle } from "react-icons/tb";
-import { BiArrowBack } from "react-icons/bi";
+import { IoAlertCircleOutline } from "@react-icons/all-files/io5/IoAlertCircleOutline";
+import { BiArrowBack } from "@react-icons/all-files/bi/BiArrowBack";
 import { useNavigate, useParams } from "react-router-dom";
 import { MovieResults } from "../../api/responseMovie";
 import Youtube from "../../components/Youtube";
@@ -47,7 +47,7 @@ const PlayMoviePage = () => {
         />
         {movie?.videos?.results.length === 0 ? (
           <S.NoVideo>
-            <TbAlertCircle
+            <IoAlertCircleOutline
               style={{
                 color: "#666",
                 fontSize: "calc(1.1rem + 0.5vw)",

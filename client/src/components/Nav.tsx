@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
 import { useNavigate } from "react-router-dom";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 import * as S from "../styles/NavStyle";

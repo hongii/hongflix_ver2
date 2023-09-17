@@ -3,7 +3,7 @@ import useOnClickOutside from "../hooks/useOnClickOutside";
 import type { MovieResults } from "../api/responseMovie";
 import { useNavigate } from "react-router-dom";
 import Youtube from "./Youtube";
-import { IoIosCloseCircle } from "react-icons/io";
+import { IoIosCloseCircle } from "@react-icons/all-files/io/IoIosCloseCircle";
 import * as S from "../styles/MovieModalStyle";
 
 interface Props {

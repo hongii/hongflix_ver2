@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as S from "../../styles/LoginMainPageStyle";
 import { useNavigate } from "react-router-dom";
-import { FaChevronRight } from "react-icons/fa";
+import { FaChevronRight } from "@react-icons/all-files/fa/FaChevronRight";
 import axios from "../../api/axiosBackend";
 
 const LoginMainPage = () => {
