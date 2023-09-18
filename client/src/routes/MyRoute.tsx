@@ -3,12 +3,13 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import SearchPage from "../pages/SearchPage";
 
 const LoginInputPage = lazy(() => import("../pages/LoginInputPage"));
 const LoginMainPage = lazy(() => import("../pages/LoginMainPage"));
 const SignUpPage = lazy(() => import("../pages/SignUpPage"));
 const MainPage = lazy(() => import("../pages/MainPage"));
-const SearchPage = lazy(() => import("../pages/SearchPage"));
+// const SearchPage = lazy(() => import("../pages/SearchPage"));
 const PlayMoviePage = lazy(() => import("../pages/PlayMoviePage"));
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
 
