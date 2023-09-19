@@ -33,6 +33,9 @@ export default class User extends BaseEntity {
   @Column({ unique: true })
   email: string;
 
+  @Column()
+  refreshToken: string;
+
   @BeforeInsert()
   async hashPassword() {
     this.password = await bcrypt.hash(this.password, 8);

@@ -33,6 +33,7 @@ const signup = async (req: Request, res: Response) => {
     user.email = email;
     user.password = password;
     user.username = username;
+    user.refreshToken = "";
 
     // user객체의 유효성 검증
     errors = await validate(user);
@@ -43,7 +44,7 @@ const signup = async (req: Request, res: Response) => {
 
     // 유효성 검증을 통과한 객체라면, user정보를 users 테이블에 저장
     await user.save();
-    const { password: pw, ...userWithoutPassword } = user;
+    const { password: pw, refreshToken, ...userWithoutPassword } = user;
     return res.json(userWithoutPassword);
   } catch (error) {
     console.error(error);
@@ -93,11 +94,15 @@ const login = async (req: Request, res: Response) => {
       process.env.JWT_ACCESS_SECRET
     );
 
-    const refreshTokenExp = Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 14; // 유효기간 14일
+    const refreshTokenExp = Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 14; // 유효기간 14일  60 * 60 * 24 * 14
     const refreshToken = jwt.sign(
       { email, exp: refreshTokenExp },
       process.env.JWT_REFRESH_SECRET
     );
+
+    user.refreshToken = refreshToken;
+    await user.save();
+
     res.set("Set-Cookie", [
       cookie.serialize("accessToken", accessToken, {
         httpOnly: true,
@@ -115,7 +120,11 @@ const login = async (req: Request, res: Response) => {
       }),
     ]);
 
-    const { password: pw, ...userWithoutPassword } = user;
+    const {
+      password: pw,
+      refreshToken: refresh_tk,
+      ...userWithoutPassword
+    } = user;
     return res.status(200).json({ userWithoutPassword, accessToken });
   } catch (error) {
     console.error(error);
@@ -124,8 +133,21 @@ const login = async (req: Request, res: Response) => {
 };
 
 /* logout api */
-const logout = async (_: Request, res: Response) => {
+const logout = async (req: Request, res: Response) => {
   try {
+    const refreshToken = req.cookies.refreshToken;
+    if (refreshToken) {
+      const { email }: any = jwt.verify(
+        refreshToken,
+        process.env.JWT_REFRESH_SECRET
+      );
+      const user = await User.findOneBy({ email });
+      if (user) {
+        user.refreshToken = "";
+        await user.save();
+      }
+    }
+
     res.set("Set-Cookie", [
       cookie.serialize("accessToken", "", {
         httpOnly: true,
@@ -210,6 +232,14 @@ const refreshToken = async (req: Request, res: Response) => {
       return res.status(404).json({ error: "Refresh token does not exist." });
     }
 
+    // db에 저장된 refresh token정보와 다른 경우 404에러(탈취된 토큰에 대한 재발급 요청 무시)
+    const user = await User.findOneBy({ refreshToken });
+    if (!user || user.refreshToken !== refreshToken) {
+      return res
+        .status(403)
+        .json({ error: "Incorrect : Invalid refresh token" });
+    }
+
     // refresh token의 유효성 및 만료기한 검증
     const { email, exp }: any = jwt.verify(
       refreshToken,
@@ -228,6 +258,10 @@ const refreshToken = async (req: Request, res: Response) => {
       { email, exp: refreshTokenExp },
       process.env.JWT_REFRESH_SECRET
     );
+
+    //db에 새롭게 발급받은 refresh token 정보 갱신
+    user.refreshToken = newRefreshToken;
+    await user.save();
 
     res.set("Set-Cookie", [
       cookie.serialize("accessToken", newAccessToken, {
