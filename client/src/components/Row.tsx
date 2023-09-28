@@ -75,10 +75,11 @@ const Row = ({ title, id, fetchURL, isLargeRow }: Props) => {
               <SwiperSlide key={movie.id} className="MySwiper">
                 <S.RowPoster
                   isLargeRow={isLargeRow}
+                  height={isLargeRow ? 360 : 160}
                   src={`https://image.tmdb.org/t/p/w300${
                     isLargeRow ? movie.poster_path : movie.backdrop_path
                   }`}
-                  alt={movie.title}
+                  alt={movie.title || movie.name}
                   onClick={() => {
                     movieClickHandler(movie as MovieResults);
                   }}
